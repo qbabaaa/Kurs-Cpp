@@ -132,3 +132,16 @@ int main()
 	}
 	return 0;
 }
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	for (int liczba = 0; liczba <= 10; ++liczba) {
+		cout << liczba << endl;
+	}
+	return 0;
+}
