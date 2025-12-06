@@ -231,3 +231,37 @@ int main() {
     cout << n << "! = " << result << '\n';
     return 0;
 }
+
+#include <iostream>
+#include <limits>
+
+int main() {
+    long long n;
+    std::cout << "Podaj liczbę, dla której chcesz wypisać tabliczkę mnożenia: ";
+    if (!(std::cin >> n)) {
+        std::cerr << "Błędne dane wejściowe.\n";
+        return 1;
+    }
+
+    int max_mul = 10; // domyślnie mnożymy od 1 do 10
+    std::cout << "Do jakiego mnożnika (domyślnie 10)? ";
+    if (!(std::cin >> max_mul)) {
+        // jeśli użytkownik podał coś niepoprawnego, ustawiamy domyślną wartość i czyścimy strumień
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        max_mul = 10;
+    }
+
+    if (max_mul <= 0) {
+        std::cerr << "Mnożnik musi być liczbą naturalną większą od 0.\n";
+        return 1;
+    }
+
+    std::cout << "\nTabliczka mnożenia dla liczby " << n << " (1.." << max_mul << "):\n";
+    for (int i = 1; i <= max_mul; ++i) {
+        long long product = n * i;
+        std::cout << n << " x " << i << " = " << product << '\n';
+    }
+
+    return 0;
+}
