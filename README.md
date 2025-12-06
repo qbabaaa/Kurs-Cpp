@@ -110,3 +110,25 @@ int main()
 	return 0;
 
 }
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+	int liczba;
+	cout << "podaj liczbe całkowito";
+	cin >> liczba;
+	if (liczba < 0) {
+		cout << "liczba ujemna" << endl;
+	}
+	else if (liczba > 0) {
+		cout << "liczba dodatnia" << endl;
+	}
+	else if (liczba == 0) {
+		cout << "zero" << endl;
+	}
+	return 0;
+}
