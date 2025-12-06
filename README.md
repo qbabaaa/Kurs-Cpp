@@ -173,3 +173,33 @@ int main() {
     cout << n << "! = " << result << '\n';
     return 0;
 }
+
+#include <iostream>
+
+using namespace std;
+
+#include <iostream>
+#include <limits>
+
+int main() {
+    long long n;
+    cout << "Podaj n (liczba calkowita >= 0): ";
+    if (!(cin >> n)) {
+        cerr << "Bledne dane wejsciowe.\n";
+        return 1;
+    }
+
+    if (n < 0) {
+        cerr << "Silnia jest zdefiniowana dla n >= 0.\n";
+        return 1;
+    }
+
+    // unsigned long long pomieści silnie do około 20! (20! = 2_432_902_008_176_640_000)
+    unsigned long long result = 1;
+    for (long long i = 1; i <= n; ++i) {
+        result *= static_cast<unsigned long long>(i);
+    }
+
+    cout << n << "! = " << result << '\n';
+    return 0;
+}
