@@ -286,3 +286,25 @@ int main()
 	}
 	return 0;
 }
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int dzien;
+    cin >> dzien;
+
+    switch (dzien) {
+
+    case 1: cout << "poniedzialek"; break;
+    case 2: cout << "wtorek"; break;
+    case 3: cout << "sroda"; break;
+    case 4: cout << "czwartek"; break;
+    case 5: cout << "piotek"; break;
+    case 6: cout << "sobota"; break;
+    case 7: cout << "niedziela"; break;
+    default: cout << "bledny dzien";
+    }
+            return 0;
+}
